@@ -30,9 +30,11 @@ const Makeup = () => {
   const [loading, setLoading] = useState(true);
   //this hook will run only when makeup app mounts
   //this will set the state for the shopping cart/nav menu
+  // eslint-disable-next-line
   const [openCart, setOpenCart] = useState(false);
   // Creating a handleFormChange function that will update the user product choice state
   // to their selection
+  // eslint-disable-next-line
   const [cartItems, setCartItems] = useState([]);
 
   const [formError, setFormError] = useState(false);
@@ -97,6 +99,7 @@ const Makeup = () => {
       return product.product_type === userQuery;
     });
     setFilteredProducts(filteredNewProducts);
+    // eslint-disable-next-line
   }, [userQuery]);
 
   const displayProducts = filteredProducts
