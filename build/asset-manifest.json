@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ffae6848.css",
+    "main.js": "/static/js/main.d4d8112c.js",
+    "static/js/787.1e693262.chunk.js": "/static/js/787.1e693262.chunk.js",
+    "static/media/makeup.jpg": "/static/media/makeup.1b49e0d64c1bb7523d8e.jpg",
+    "static/media/productNotFound.png": "/static/media/productNotFound.d583ba9a658804f33768.png",
+    "index.html": "/index.html",
+    "main.ffae6848.css.map": "/static/css/main.ffae6848.css.map",
+    "main.d4d8112c.js.map": "/static/js/main.d4d8112c.js.map",
+    "787.1e693262.chunk.js.map": "/static/js/787.1e693262.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ffae6848.css",
+    "static/js/main.d4d8112c.js"
+  ]
+}
