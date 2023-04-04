@@ -1,5 +1,10 @@
-const Product = (props) => {
-  const { product, handleAddToCart } = props;
+import { useRef } from "react";
+import { useCart } from "../contexts/cart";
+
+const Product = ({ product }) => {
+  const amount = useRef();
+  const { addToCart } = useCart();
+
   return (
     <div className="product-container">
       <img src={`https://${product.api_featured_image}`} alt=""></img>
@@ -7,12 +12,13 @@ const Product = (props) => {
       <p className="price">PRICE:${Number(product.price).toFixed(2)}</p>
       <div className="buttons">
         <button
-          onClick={() => handleAddToCart(product)}
-          className="addToCartBttn"
+          onClick={() => addToCart(product, +amount.current.value)}
+          className="add-button"
           id={product.id}
         >
           Add to Cart
         </button>
+        <input ref={amount} min={0} className='amount-button' about='amount' type='number' />
       </div>
     </div>
   );
