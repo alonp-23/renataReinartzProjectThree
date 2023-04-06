@@ -313,9 +313,9 @@ button:hover {
 }
 
 .submit {
-  width: 20%;
   background-color: var(--pink-color);
   color: var(--black-color);
+  width: 200px;
 }
 
 .submit:hover {
@@ -393,7 +393,6 @@ button:hover {
 }
 
 .cartIcon {
-  width: 5%;
   background-color: var(--black-color);
   margin-right: 20px;
 }
@@ -677,48 +676,70 @@ span {
 #cart-container table {
   border-collapse:collapse;
   width:100%;
-  table-layout:fixed;
 }
 
 #cart-container table thead{
   font-weight:700;
 }
-#cart-container table thead td {
+#cart-container table thead td,
+#cart-container table thead th {
   /* background-color: var(--pink-color); */
   color:var(--white-color);
-  border:1px solid var(--white-color);
   padding:6px 0;
 }
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 0.5rem;
+  text-align: center;
+  border:1px solid var(--white-color);
+}
+
+.cart-table td.product-remove {
+  width: 10%;
+}
+
+.cart-table td img {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  height: auto;
+}
+
+.cart-table td.product-image {
+  width: 15%;
+}
+
+.cart-table td.product-name {
+  min-width: 40%;
+}
+
+.cart-table td.product-price {
+  width: 15%;
+}
+
+.cart-table td.product-quantity {
+  width: 15%;
+}
+
+.cart-table td.product-total {
+  width: 15%;
+}
+
 .border{
   border:1px solid var(--white-color);
   text-align:center;
 }
 
-td:nth-child(1){
-  width:100px;
-  border: 1px solid var(--white-color);
+.table-body {
+  border:1px solid var(--white-color);
 }
-
-.image{
-  display:flex;
-  justify-content: center;
-}
-
- td:nth-child(3) {
-  width: 200px;
-  border: 1px solid var(--white-color);
-}
-td:nth-child(4),
-td:nth-child(5),
-td:nth-child(6) {
-  width: 200px;
-  border: 1px solid var(--white-color);
-}
- .cartImage{
-  width:150px;
-  height:150px;
-  object-fit:cover;
-  }
 
 tr,.trash-can{
 text-align: center;
@@ -729,9 +750,11 @@ text-align: center;
 }
 
 .quantity{
-  width:30%;
+  width: 50px;
+  text-align: center;
   padding:.5em;
 }
+
 #cart-bottom{
   color:var(--white-color);
   margin-top:3em;

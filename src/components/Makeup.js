@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 // import Form from "./components/Form";
 import Loader from './Loader';
 import Header from './Header';
@@ -33,7 +32,6 @@ export const defaultQueryParameters = formatQueryParameters(filterByPriceOptions
 //products are a variable containing our pieces of products
 //setProducts is a function to update products
 const Makeup = () => {
-  const navigate = useNavigate();
   const [userChoice, setUserChoice] = useState('');
   const [userPrice, setUserPrice] = useState('');
   //this hook will run only when makeup app mounts

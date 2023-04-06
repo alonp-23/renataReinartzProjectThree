@@ -14,9 +14,9 @@ const Cart = () => {
   const handleQuantityChange = (event, itemId) => {
     // Logic for updating the cart items' quantity
     const newAmount = parseInt(event.target.value) || 1;
-    const updatedCartItem = {product: cart.find(({product}) => product.id === itemId), amount: newAmount};
+    const updatedCartItem = cart.find(({product}) => product.id === itemId).product;
       
-    addToCart(updatedCartItem);
+    addToCart(updatedCartItem, newAmount);
   };
 
   // Function to handle deleting a cart item
@@ -44,15 +44,15 @@ const Cart = () => {
           <table className='cart-table'>
             <thead>
               <tr>
-                <td>Remove</td>
-                <td>Image</td>
-                <td>Product</td>
-                <td>Price</td>
-                <td>Quantity</td>
-                <td>Total</td>
+                <th>Remove</th>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className='table-body'>
               {
                 (cart.length === 0 && (
                 <tr>
@@ -66,7 +66,7 @@ const Cart = () => {
                 cart.map(({product, amount}) => {
                   return (
                     <tr key={product.id} className="border">
-                      <td>
+                      <td className='product-remove'>
                         <button
                           className="trash-can"
                           onClick={() => handleDeleteCartItem(product)}
@@ -74,20 +74,20 @@ const Cart = () => {
                           <Trash size={24} />
                         </button>
                       </td>
-                      <td className="image">
+                      <td className="image product-image">
                         <img
                           className="cartImage"
                           src={product.api_featured_image}
                           alt={product.name}
                         />
                       </td>
-                      <td>
+                      <td className='product-name'>
                         <h3>{product.name}</h3>
                       </td>
-                      <td>
+                      <td className='product-price'>
                         <p>${product.price}</p>
                       </td>
-                      <td>
+                      <td className='product-quantity'>
                         <input
                           className="quantity"
                           key={product.id}
@@ -98,7 +98,7 @@ const Cart = () => {
                           type="number"
                         ></input>
                       </td>
-                      <td>
+                      <td className='product-total'>
                         <span>
                           ${(product.price * amount).toFixed(2)}
                         </span>

@@ -7,7 +7,7 @@ export const CartProvider = ({children}) => {
 
 	const addToCart = (product, amount) => {
 		setCart(currentCart => {
-			const productCartInfo = currentCart.find(x => x.product.id === product.id) || {};
+			const productCartInfo = currentCart.pop(x => x.product.id === product.id) || {};
 				
 			productCartInfo.product = product;
 			productCartInfo.amount = amount;
