@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 const Coupon = ({ totalPrice }) => {
   const [myValue, setMyValue] = useState('');
+
   const handleInputChange = (e) => {
     setMyValue(e.target.value);
   };
+
   return (
     <section id="cart-bottom" className="container">
       <div className="wrapper">
-        <div className="row">
+        <div>
           <div className="coupon">
             <h5>Coupon</h5>
             <p>Enter your coupon code if you have one</p>

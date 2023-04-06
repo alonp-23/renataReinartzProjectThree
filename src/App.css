@@ -420,6 +420,11 @@ button:hover {
 
 .buttons {
   display: flex;
+  justify-content: center;
+}
+
+.add-button {
+  width: 50%;
 }
 
 .amount-button {
@@ -574,7 +579,6 @@ form{
     font-size: 14px;
   }
   th, td {
-    width: 100%;
     text-align: left;
   }
   th {
@@ -696,7 +700,6 @@ span {
 
 .cart-table th,
 .cart-table td {
-  padding: 0.5rem;
   text-align: center;
   border:1px solid var(--white-color);
 }
@@ -764,11 +767,16 @@ text-align: center;
 
 } */
 .row {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap:2em;
+  gap:2em; */
   margin-bottom:5em;
 }
+
+.coupon {
+  margin-bottom: 10px;
+}
+
 .coupon,.total{
   border:1px solid var(--white-color);
   padding:1em;

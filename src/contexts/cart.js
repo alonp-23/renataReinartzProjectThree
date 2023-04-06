@@ -7,11 +7,13 @@ export const CartProvider = ({children}) => {
 
 	const addToCart = (product, amount) => {
 		setCart(currentCart => {
-			const productCartInfo = currentCart.pop(x => x.product.id === product.id) || {};
+			console.log(currentCart)
+			const index = currentCart.findIndex(x => x.product.id === product.id);
+			const productCartInfo = index > -1 ? currentCart.splice(index, 1)[0] : {};
 				
 			productCartInfo.product = product;
 			productCartInfo.amount = amount;
-
+			console.log(currentCart)
 			return [...currentCart, productCartInfo];
 		});
 	}
