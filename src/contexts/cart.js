@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const cartContext = createContext({});
 
@@ -7,13 +7,12 @@ export const CartProvider = ({children}) => {
 
 	const addToCart = (product, amount) => {
 		setCart(currentCart => {
-			console.log(currentCart)
 			const index = currentCart.findIndex(x => x.product.id === product.id);
 			const productCartInfo = index > -1 ? currentCart.splice(index, 1)[0] : {};
 				
 			productCartInfo.product = product;
 			productCartInfo.amount = amount;
-			console.log(currentCart)
+
 			return [...currentCart, productCartInfo];
 		});
 	}
@@ -25,6 +24,18 @@ export const CartProvider = ({children}) => {
 			return [ ...currentCart ];
 		});
 	}
+
+	useEffect(() => {
+		const startingCart = localStorage.getItem('cart');
+		
+		if (!!startingCart) {
+			setCart(JSON.parse(startingCart));
+		}
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem('cart', JSON.stringify(cart))
+	}, [cart]);
 
 	return (
 		<cartContext.Provider value={{cart, addToCart, removeFromCart}}>

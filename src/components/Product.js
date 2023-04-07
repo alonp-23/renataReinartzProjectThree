@@ -18,7 +18,7 @@ const Product = ({ product }) => {
         >
           Add to Cart
         </button>
-        <input ref={amount} min={0} className='amount-button' about='amount' type='number' />
+        <input ref={amount} defaultValue={1} min={1} className='amount-button' about='amount' type='number' />
       </div>
     </div>
   );
